@@ -74,5 +74,7 @@ public class first_class {
         two(-12);
         three(-12);
         max_one(3,24,12);
+        second_class.xingqi(4);
+        second_class.jijie(11);
     }
 }
