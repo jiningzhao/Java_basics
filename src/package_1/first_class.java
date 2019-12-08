@@ -1,6 +1,6 @@
 package package_1;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+//import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class first_class {
 
@@ -62,7 +62,7 @@ public class first_class {
     public static void main(String[] args) {
         System.out.println("Hello world");
         print_String();
-        int c,d,e,f;
+        int c,d,e;
         c = print_add(1,2);
         System.out.println(c);
         d = print_and(1,2);
