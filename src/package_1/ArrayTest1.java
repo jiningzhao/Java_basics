@@ -4,11 +4,15 @@ package package_1;
  */
 public class ArrayTest1 {
     public static void main(String[] args) {
-        toHex(60);
-        System.out.println();
         toHex_1(60);
         System.out.println();
         toHex_2(60);
+        System.out.println("----------------");
+        toHex(60);
+        System.out.println();
+        toBinary(60);
+        System.out.println();
+        toOctal(60);
         System.out.println();
     }
     /*
@@ -21,7 +25,20 @@ public class ArrayTest1 {
 
     这种方式称为：查表法。
      */
-    public static void toHex_2(int num){
+    public static void toBinary(int num){
+        System.out.println("二进制转化：num= "+num);
+        trans(num,1,1);
+    }
+    public static void toHex(int num){
+        System.out.println("十六进制转化：num= "+num);
+        trans(num,15,4);
+    }
+    public static void toOctal(int num){
+        System.out.println("八进制转化：num= "+num);
+        trans(num,7,3);
+    }
+
+    public static void trans(int num,int base,int offset){
         if(num == 0){
             System.out.println("0");
             return;
@@ -36,9 +53,9 @@ public class ArrayTest1 {
         char[] arr = new char[8];
         int pos = arr.length;
         while(num != 0){
-            int temp = num & 15;
+            int temp = num & base;
             arr[--pos] = chs[temp];
-            num = num >>> 4;
+            num = num >>> offset;
         }
         System.out.println("pos="+pos);
         for(int i = pos; i < arr.length; i++){
@@ -57,7 +74,7 @@ public class ArrayTest1 {
         }
     }
 
-    public static void toHex(int num){
+    public static void toHex_2(int num){
         for(int x = 0; x < 8; x++){
             int temp = num & 15;
             if(temp > 9)
